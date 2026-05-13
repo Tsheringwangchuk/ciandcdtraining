@@ -9,7 +9,7 @@ pipeline{
       stage('build')
       {
         steps{
-          echo "build my project."
+          sh 'cat file1'
         }
     }
   }
