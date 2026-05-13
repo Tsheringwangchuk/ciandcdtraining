@@ -1,19 +1,23 @@
 pipeline {
     agent any
+
     stages {
-        stage('build') {
+
+        stage('System Info') {
             steps {
-                echo "Building"
+                sh 'echo "=== System Information ==="'
+                sh 'hostname'
+                sh 'uptime'
+                sh 'df - h'
+                sh 'free - m'
             }
         }
-        stage('test') {
+
+        stage('List Files') {
             steps {
-                echo "Testing"
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo "Deploying"
+                sh 'echo "=== Current Directory ==="'
+                sh 'pwd'
+                sh 'ls - lrt'
             }
         }
     }
