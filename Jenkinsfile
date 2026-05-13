@@ -16,7 +16,6 @@ pipeline {
         stage('List Files') {
             steps {
                 sh 'echo "=== Current Directory ==="'
-                sh 'pwd'
                 sh 'ls - lrt'
             }
         }
